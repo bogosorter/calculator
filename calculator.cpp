@@ -54,8 +54,44 @@ class Subtraction : public Expression {
     }
 };
 
+class Multiplication : public Expression {
+    private:
+    Expression *left;
+    Expression *right;
+
+    public:
+
+    Multiplication(Expression *left, Expression *right): left(left), right(right) {};
+
+    float evaluate()  {
+        return left->evaluate() * right->evaluate();
+    }
+
+    std::string toString() {
+        return "(" + left->toString() + " * " + right->toString() + ")";
+    }
+};
+
+class Division : public Expression {
+    private:
+    Expression *left;
+    Expression *right;
+
+    public:
+
+    Division(Expression *left, Expression *right): left(left), right(right) {};
+
+    float evaluate()  {
+        return left->evaluate() / right->evaluate();
+    }
+
+    std::string toString() {
+        return "(" + left->toString() + " / " + right->toString() + ")";
+    }
+};
+
 int main() {
-    Expression *expression = new Sum(new Integer(3), new Subtraction(new Integer(5), new Integer(2)));
+    Expression *expression = new Division(new Integer(20), new Multiplication(new Integer(5), new Integer(2)));
     std::cout << "Evaluating expression: " << expression->toString() << std::endl;
     std::cout << "Value: " << expression->evaluate() << std::endl;
 }
