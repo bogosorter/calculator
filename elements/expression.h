@@ -1,5 +1,5 @@
-#ifndef _calculator_h_
-#define _calculator_h_
+#ifndef _expression_h_
+#define _expression_h_
 
 #include <string>
 
