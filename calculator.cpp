@@ -10,7 +10,10 @@ int main() {
     getline(std::cin, line);
 
     std::vector<Token> tokens = Parser::tokenize(line);
-    for (Token token : tokens) {
-        std::cout << token.lexeme << " " << token.tokenType << " " << token.column << std::endl;
-    }
+    for (auto token : tokens) std::cout << token.lexeme << " " << token.tokenType << std::endl;
+    Expression *expression = Parser::parse(tokens);
+
+    std::cout << expression->toString() << std::endl;
+
+    std::cout << "< " << expression->evaluate() << std::endl;
 }

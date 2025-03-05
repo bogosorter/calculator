@@ -1,0 +1,7 @@
+A grammar inspired in the one described in the book Crafting Interpreters: https://craftinginterpreters.com/parsing-expressions.html
+
+expression -> term
+term -> factor (("+" | "-") factor)*
+factor -> unary (("*" | "/") unary)*
+unary -> "-" primary
+primary -> "(" expression ")" INTEGER (for now)

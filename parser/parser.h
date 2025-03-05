@@ -22,6 +22,14 @@ struct Token {
 class Parser {
     public:
     static std::vector<Token> tokenize(std::string line);
+    static Expression *parse(std::vector<Token> &tokens);
+
+    private:
+    static Expression *expression(std::vector<Token> &tokens, int &index);
+    static Expression *term(std::vector<Token> &tokens, int &index);
+    static Expression *factor(std::vector<Token> &tokens, int &index);
+    static Expression *unary(std::vector<Token> &tokens, int &index);
+    static Expression *primary(std::vector<Token> &tokens, int &index);
 };
 
 #endif

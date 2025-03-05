@@ -1,2 +1,5 @@
 calculator
 *.o
+.vscode
+*.out
+.idea
