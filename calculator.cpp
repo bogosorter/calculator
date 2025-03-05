@@ -1,9 +1,16 @@
 #include "elements/elements.h"
+#include "parser/parser.h"
 
 #include <iostream>
+#include <string>
 
 int main() {
-    Expression *expression = new Division(new Integer(20), new Multiplication(new Integer(5), new Integer(3)));
-    std::cout << "Evaluating expression: " << expression->toString() << std::endl;
-    std::cout << "Value: " << expression->evaluate() << std::endl;
+    std::cout << "> ";
+    std::string line;
+    getline(std::cin, line);
+
+    std::vector<Token> tokens = Parser::tokenize(line);
+    for (Token token : tokens) {
+        std::cout << token.lexeme << " " << token.tokenType << " " << token.column << std::endl;
+    }
 }

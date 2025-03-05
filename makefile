@@ -2,11 +2,12 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -Wall -Wextra -std=c++11 -I.
+CXXFLAGS = -Wall -Wextra -std=c++11 -I. -fsanitize=address
 
 # Directories
 SRC_DIR = .
 ELEMENTS_DIR = elements
+PARSER_DIR = parser
 
 # Source files
 SRCS = $(SRC_DIR)/calculator.cpp \
@@ -14,7 +15,8 @@ SRCS = $(SRC_DIR)/calculator.cpp \
        $(ELEMENTS_DIR)/integer.cpp \
        $(ELEMENTS_DIR)/multiplication.cpp \
        $(ELEMENTS_DIR)/subtraction.cpp \
-       $(ELEMENTS_DIR)/sum.cpp
+       $(ELEMENTS_DIR)/sum.cpp \
+       $(PARSER_DIR)/parser.cpp
 
 # Object files (replace .cpp with .o)
 OBJS = $(SRCS:.cpp=.o)
