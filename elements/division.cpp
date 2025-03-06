@@ -9,3 +9,8 @@ float Division::evaluate()  {
 std::string Division::toString() {
     return "(" + left->toString() + " / " + right->toString() + ")";
 }
+
+Division::~Division() {
+    delete left;
+    delete right;
+}

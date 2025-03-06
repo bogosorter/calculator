@@ -10,3 +10,8 @@ float Subtraction::evaluate() {
 std::string Subtraction::toString() {
     return "(" + left->toString() + " - " + right->toString() + ")";
 }
+
+Subtraction::~Subtraction() {
+    delete left;
+    delete right;
+}

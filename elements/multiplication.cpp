@@ -10,3 +10,8 @@ float Multiplication::evaluate() {
 std::string Multiplication::toString() {
     return "(" + left->toString() + " * " + right->toString() + ")";
 }
+
+Multiplication::~Multiplication() {
+    delete left;
+    delete right;
+}

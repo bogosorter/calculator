@@ -10,9 +10,9 @@ class Multiplication : public Expression {
 
     public:
     Multiplication(Expression *left, Expression *right);
-
     float evaluate() override;
     std::string toString() override;
+    ~Multiplication();
 };
 
 #endif

@@ -10,3 +10,8 @@ float Sum::evaluate() {
 std::string Sum::toString() {
     return "(" + left->toString() + " + " + right->toString() + ")";
 }
+
+Sum::~Sum() {
+    delete left;
+    delete right;
+}

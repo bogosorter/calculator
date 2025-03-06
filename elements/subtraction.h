@@ -10,9 +10,9 @@ class Subtraction : public Expression {
 
     public:
     Subtraction(Expression *left, Expression *right);
-
     float evaluate() override;
     std::string toString() override;
+    ~Subtraction();
 };
 
 #endif

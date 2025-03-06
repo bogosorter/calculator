@@ -45,10 +45,7 @@ Expression *Parser::expression(std::vector<Token> &tokens, int &index) {
 Expression *Parser::term(std::vector<Token> &tokens, int &index) {
     Expression *left = factor(tokens, index);
 
-    std::cout << "Plus"  << " " << index << std::endl;
-
     while (tokens[index].tokenType == PLUS || tokens[index].tokenType == MINUS) {
-        std::cout << "Plus" << std::endl;
         bool sum = tokens[index].tokenType == PLUS;
         Expression *right = factor(tokens, ++index);
 
@@ -83,7 +80,6 @@ Expression *Parser::unary(std::vector<Token> &tokens, int &index) {
 }
 
 Expression *Parser::primary(std::vector<Token> &tokens, int &index) {
-    std::cout << "primary" << std::endl;
     if (tokens[index].tokenType == LEFT_PARENTHESIS) {
         Expression *inner = expression(tokens, ++index);
 

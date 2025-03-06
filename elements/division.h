@@ -10,9 +10,9 @@ class Division : public Expression {
 
     public:
     Division(Expression *left, Expression *right);
-
     float evaluate() override;
     std::string toString() override;
+    ~Division();
 };
 
 #endif

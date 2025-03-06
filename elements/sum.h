@@ -10,9 +10,9 @@ class Sum : public Expression {
 
     public:
     Sum(Expression *left, Expression *right);
-
     float evaluate() override;
     std::string toString() override;
+    ~Sum();
 };
 
 #endif
