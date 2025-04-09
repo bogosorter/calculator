@@ -5,6 +5,6 @@ A program that parses and evaluates simple mathematical expressions. To be expan
 ```
 $ make calculator
 $ ./calculator
-> 3 + (4 * 5)
+> 3 + 4 * 5
 23
 ```
